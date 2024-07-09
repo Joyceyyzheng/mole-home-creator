@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little mole's new home</title>
+    <meta name="Little mole's new home" content="Create the little mole's new home! ">
+    <link rel="icon" type="image/png" href="/mole_icon.png">
+
+    <!-- HTML Meta Tags -->
+    <title>Little mole's new home</title>
+    <meta name="description" content="Create the little mole's new home! ">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://mole-home-creator-joyce.replit.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Little mole's new home">
+    <meta property="og:description" content="Create the little mole's new home! ">
+    <meta property="og:image" content="https://opengraph.b-cdn.net/production/documents/31a4a839-321f-4101-8bbe-0581ac7c0099.png?token=-5orBokqBbpxUw1aAiUACn9O5I7LVFfIrA1Nsl_NUko&height=585&width=1200&expires=33246947640">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mole-home-creator-joyce.replit.app">
+    <meta property="twitter:url" content="https://mole-home-creator-joyce.replit.app/">
+    <meta name="twitter:title" content="Little mole's new home">
+    <meta name="twitter:description" content="Create the little mole's new home! ">
+    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/documents/31a4a839-321f-4101-8bbe-0581ac7c0099.png?token=-5orBokqBbpxUw1aAiUACn9O5I7LVFfIrA1Nsl_NUko&height=585&width=1200&expires=33246947640">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    
+  </head>
+  <body>
+    <img src = "public/themole.png" alt = "mole" id = "mole">
+     <img src = "public/thehouse.png" alt = "house" id = "house">
+    <div id = "prompt">Help the Mole find the way home and decorate their underground world 🫶 </div>
+    <script type="module" src="/main.js"></script>
+    <div id = "menuBox">
+      <div id = "brushContainer">
+        <button class = "brushes" id = "hoe">⛏</button>
+        <button class = "brushes" id = "pencil">✏️</button>
+        <button class = "brushes" id = "pen">✒️</button>
+      </div>
+
+      <div id = "stampContainer"> 
+        <div id = "stamp1" class = "stampsRow">
+          <button class = "stamps">🍀</button>
+          <button class = "stamps">🌷</button>
+          <button class = "stamps">🌻</button>
+          <button class = "stamps">🌺</button>
+          <button class = "stamps">🌱</button>
+           <button class = "stamps">🐜</button>
+        </div>
+        <div id = "stamp2" class = "stampsRow">
+          <button class = "stamps">🐛</button>
+          <button class = "stamps">🍄</button>
+          <button class = "stamps">🪨</button>
+          <button class = "stamps">🦔</button>
+          <button class = "stamps">🐀</button>
+           <button class = "stamps">🪺</button>
+        </div>
+      </div>
+
+      <div id = "coloredContainer">
+        <div id = "colorPickers">
+       
+           <button class = "colors" id = "green"> </button>
+           <button class = "colors" id = "yellow"> </button>
+           <button class = "colors" id = "pink"> </button>
+           <button class = "colors" id = "red"> </button>
+           <button class = "colors" id = "white"> </button>
+          
+          <label for="color-picker-green2" class="color-picker-label">
+          </label>
+           <input type="color" id="color-picker-green2" class="color-picker" value="#4C8107">
+ 
+        </div>
+        <div id = "moreTools">
+         
+        <input type="range" min="50" max="120" value="70" class="slider" id="myRange">
+          
+        </div>
+      </div>      
+
+      <div id = "buttons">
+        <div>
+           <button class = "buttons" id = "undo">undo</button>
+        </div>
+        <div >
+        <button class = "buttons" id = "reset">reset</button>
+          </div>
+        <div >
+        <button class = "buttons" id = "save">save</button>
+           </div>
+        
+      </div>
+    </div>
+
+    <canvas id="bigCanvas"></canvas>
+  </body>
+</html>

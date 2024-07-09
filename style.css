@@ -1,0 +1,316 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns the content to the bottom */
+  align-items: center; /* Centers the content horizontally */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Removes default body margin */
+  padding:0;
+  overflow:hidden;
+}
+html{
+   overflow:hidden;
+}
+
+#prompt{
+  align-items:center;
+  position:absolute;
+  top:0;
+  display:flex;
+  background-color:white;
+  font-family:impact;
+  font-size:1rem;
+  padding:0.3rem;
+  justify-content:center;
+  width:100%;
+  color:#A04A4A;
+  z-index:5;
+}
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  z-index:1;
+}
+
+#menuBox{
+  flex-direction:row;
+  display:flex;
+  justify-content:space-evenly;
+  align-items:center;
+  
+  width:95%;
+  position:absolute;
+  
+  bottom:0;
+  height:auto;
+  border-radius:1rem 1rem 1rem 1rem;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.7);
+   box-shadow: inset 0 0 28px rgba(0, 0, 0, 0.9);
+  border-style:solid;
+  border-width:0.6rem;
+  border-color:#965C2E;
+  background-color:#311E0A;
+
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  white-space: nowrap;
+  z-index:5;
+}
+
+@media (max-width: 768px) {
+    #menuBox {
+    flex-direction: column; 
+    justify-content: flex-start; /* Aligns the content to the bottom */
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    height: 30vh; 
+    align-items: center; 
+    padding-top:10px; 
+    padding-bottom:10px; 
+    }
+}
+
+#brushContainer{
+  flex-direction:row;
+  display:flex;
+  margin:1rem;
+}
+
+.brushes{
+  width: 3.8rem; 
+  height: 3.8rem; 
+  background-image: url('public/woodbutton_default.png'); 
+  background-size: cover; 
+  border-radius: 5px; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0.6rem;
+
+  background-color:rgb(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  font-size:25px;
+}
+
+.brushes:active{
+  background-image: url('public/woodbutton_active.png'); 
+}
+.buttons{
+  width: 3.2rem; 
+  height: 3.2rem; 
+  background-image: url('public/woodbutton_default.png'); 
+  background-size: cover; 
+  border-radius: 5px; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0.3rem;
+  background-color:rgb(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  font-family: 'Impact';
+  margin:1rem;
+}
+
+.buttons:active{
+  background-image: url('public/woodbutton_active.png'); 
+}
+
+#stampContainer{
+  flex-direction:column;
+  display:flex;
+}
+
+#stamp1, #stamp2{
+  flex-direction:row;
+  display:flex;
+}
+
+.stamps{
+  width: 2rem; 
+  height: 2rem; 
+  background-image: url('public/woodbutton_default.png'); 
+  background-size: cover; 
+  border-radius: 5px;
+  display:flex;
+  justify-content:space-evenly;
+  align-items:center;
+  margin:0.35rem;
+
+  background-color:rgb(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+
+  font-size:12px;
+}
+
+
+.stamps:active{
+  background-image: url('public/woodbutton_active.png'); 
+}
+
+@media (max-width: 768px) {
+    .stamps {
+      width: 2.8rem; 
+      height: 2.8rem; 
+
+    }
+}
+
+#coloredContainer{
+  flex-direction:column;
+  display:flex;
+}
+
+#colorPickers{
+  flex-direction:row;
+  display:flex;
+ 
+}
+@media (max-width: 768px) {
+    #colorPickers {
+      flex-direction:row;
+      display:flex;
+      margin-top:1rem;
+      margin-bottom:1rem;
+    }
+}
+
+.color-picker {
+  /* width: 30px;
+  height: 30px; 
+  
+  border: none; 
+  cursor: pointer; 
+  -webkit-appearance: none; 
+  padding: 0;
+  margin: 5px;  */
+  opacity:0;
+  width: 1px;
+  height: 1px; 
+  position: absolute; 
+  margin: -1px; 
+  overflow: hidden;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.color-picker-label {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  border: none;
+  margin:0.25rem;
+  /* opacity:0; */
+}
+
+.colors{
+  width: 30px;
+  height: 30px;
+  border-radius:50%;
+  font-size:16px;
+  display: flex;
+  border: none;
+  margin:0.25rem;
+  cursor: pointer;
+}
+#green{
+  background-color:#63CC1D;
+}
+#yellow{
+  background-color:#FFD54C;
+}
+#pink{
+  background-color:#FF6995;
+}
+#red{
+  background-color:#F5584E;
+}
+#white{
+  background-color:#FFFFFF;
+}
+
+.slider{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.6rem;
+  border-radius:5px;
+  background: #D98C3D;
+  outline: none;
+  
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius:50%;
+  background: #975C2C;
+  cursor: pointer;
+}
+
+#moreTools{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+  
+}
+
+#buttons{
+  display:flex;
+  flex-direction:row;
+}
+
+@media (max-width: 768px) {
+    #buttons {
+    flex-direction: row; 
+    margin-bottom:1rem;
+   
+    }
+}
+
+#mole{
+  position:absolute;
+  z-index:10;
+  left:1%;
+  top:0.8%;
+  width:10rem;
+  pointer-events: none;
+}
+
+
+#house{
+  position:absolute;
+  z-index:10;
+  right:1%;
+  bottom:20%;
+  width:10rem;
+  pointer-events: none;
+}
+
+
+@media (max-width: 868px) {
+    #mole {
+    width:4rem;
+    }
+
+  #house{
+     width:4rem;
+    bottom:33%;
+  }
+}
